@@ -23,7 +23,7 @@ public class JsonVehicleDaoImpl extends RandomTemplate implements VehicleDao{
     private File file;
     private final String FILENAME = "vehicleJson.dat";
     private final int SIZE = 800;    
-    private Gson gson;
+    private  Gson gson;
     
     
     public JsonVehicleDaoImpl() throws FileNotFoundException {
