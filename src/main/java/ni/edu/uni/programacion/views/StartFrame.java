@@ -11,6 +11,7 @@ import ni.edu.uni.programacion.controllers.PnlCalculadoraController;
 import ni.edu.uni.programacion.controllers.PnlTemperatureController;
 import ni.edu.uni.programacion.views.panels.PnlCalculadora;
 import ni.edu.uni.programacion.views.panels.PnlConversionTemplate;
+import ni.edu.uni.programacion.views.panels.PnlVehicle;
 
 /**
  *
@@ -22,6 +23,7 @@ public class StartFrame extends javax.swing.JFrame {
     private PnlCalculadoraController pnlCalculadoraController;
     private PnlConversionTemplate pnlCTTemperature;
     private PnlTemperatureController pnlTemperatureController;
+    private PnlVehicle pnlVehicle;
 
     /**
      * Creates new form StartFrame
@@ -43,7 +45,7 @@ public class StartFrame extends javax.swing.JFrame {
         pnlLeftButtons = new javax.swing.JPanel();
         btnCalc = new javax.swing.JButton();
         btnTemperature = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnVehicle = new javax.swing.JButton();
         pnlContent = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,8 +72,13 @@ public class StartFrame extends javax.swing.JFrame {
         });
         pnlLeftButtons.add(btnTemperature);
 
-        jButton3.setText("jButton3");
-        pnlLeftButtons.add(jButton3);
+        btnVehicle.setText("Vehicle");
+        btnVehicle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVehicleActionPerformed(evt);
+            }
+        });
+        pnlLeftButtons.add(btnVehicle);
 
         getContentPane().add(pnlLeftButtons, java.awt.BorderLayout.LINE_START);
 
@@ -107,6 +114,14 @@ public class StartFrame extends javax.swing.JFrame {
         }
         addComponent(pnlCTTemperature);
     }//GEN-LAST:event_btnTemperatureActionPerformed
+
+    private void btnVehicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVehicleActionPerformed
+        if (pnlVehicle == null) {
+            pnlVehicle = new PnlVehicle();
+            //pnl = new PnlCalculadoraController(pnlCalculadora);
+        }
+        addComponent(pnlCalculadora);
+    }//GEN-LAST:event_btnVehicleActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,7 +161,7 @@ public class StartFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalc;
     private javax.swing.JButton btnTemperature;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnVehicle;
     private javax.swing.JPanel pnlContent;
     private javax.swing.JPanel pnlLeftButtons;
     // End of variables declaration//GEN-END:variables
